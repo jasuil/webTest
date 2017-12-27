@@ -25,7 +25,11 @@ public class HomeRestController {
 	public String home(@RequestBody peopleData dto) {
 
 		logger.info("sss " + dto.toString());
-		return dto.toString();
+		return dto.getList().toString();
 	}
-		
+	
+	@RequestMapping(value = "/toss", method = RequestMethod.GET)
+	public String test( String dto) {
+		return dto;
+	}
 }

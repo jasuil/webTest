@@ -10,9 +10,6 @@
 	Hello world!  
 </h1>
 
-<form name='bucket'>
-
-</form>
 <input type='button' id='button' value='click'/>
 <div id='gets'></div>
 
@@ -50,10 +47,10 @@ $('#button').on('click',function(){
         url:'/toss',
         //data: JSON.stringify({name:'jasuil',phone:'1212',list:[{name:"fd",phone:'1212'},{name:"성일짱",phone:'12223'}]}),
         data: JSON.stringify(dataListObj),
-        dataType:'json',
-        method: "get",
+        dataType:'text',
+        method: "post",
         success:function(data){
-            $('#gets').innerHTML(data);
+            $('#gets').text(data);
         }
     })
 });
