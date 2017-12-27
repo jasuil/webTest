@@ -4,6 +4,13 @@
 <head>
 	<title>Home</title>
 	<script src="/resources/jquery321.js"></script>
+	<!-- include libraries(jQuery, bootstrap) -->
+<link rel="stylesheet" href="/resources/css/bootstrap.min.css" />
+<script type="text/javascript" src="/resources/js/bootstrap.min.js"></script>
+
+<!-- include summernote css/js-->
+<link href="/resources/snote/summernote.css" rel="stylesheet">
+<script src="/resources/snote/summernote.js"></script>
 </head>
 <body>
 <h1>
@@ -19,8 +26,13 @@
 <input type="text" name="phone1" value="010"/>
 <input type="text" name="phone2" value="6666666"/>
 <!-- list parameter E -->
+<div id="summernote">Hello Summernote</div>
 
 <script>
+$(document).ready(function() {
+	  $('#summernote').summernote();
+	});
+	
 $('#button').on('click',function(){
 	
 	var dataList = new Array();
@@ -46,6 +58,7 @@ $('#button').on('click',function(){
 			},
         url:'/toss',
         //data: JSON.stringify({name:'jasuil',phone:'1212',list:[{name:"fd",phone:'1212'},{name:"성일짱",phone:'12223'}]}),
+        //above data modified with {"name":"jasuil","phone":"1212","list":[{"name":"fd","phone":"1212"},{"name":"성일짱","phone":"12223"}]}
         data: JSON.stringify(dataListObj),
         dataType:'text',
         method: "post",

@@ -1,5 +1,7 @@
 package net.my.test;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -29,7 +31,12 @@ public class HomeRestController {
 	}
 	
 	@RequestMapping(value = "/toss", method = RequestMethod.GET)
-	public String test( String dto) {
-		return dto;
+	public String test(peopleData dto) {
+		return dto.toString();
+	}
+	
+	@RequestMapping(value = "/toast", method = RequestMethod.GET)
+	public String test(List<peopleData> dto) {
+		return dto.toString();
 	}
 }
